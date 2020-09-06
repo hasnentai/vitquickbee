@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:vit_qucik_bee/landingpage.dart';
 
-class LoginForm extends StatelessWidget {
+class LoginForm extends StatefulWidget {
+  @override
+  _LoginFormState createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<LoginForm> {
+
+ 
+
+
+
+
   @override
   Widget build(BuildContext context) {
     print(MediaQuery.of(context).size.width);
@@ -21,6 +32,9 @@ class LoginForm extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               LandingPage(),
+              SizedBox(
+                height: 90.0,
+              ),
               Form(
                   child: Column(
                 children: [
@@ -32,7 +46,7 @@ class LoginForm extends StatelessWidget {
                         focusColor: Color(0xFF18D191)),
                   ),
                   SizedBox(
-                    height: 20.0,
+                    height: 10.0,
                   ),
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
@@ -40,8 +54,43 @@ class LoginForm extends StatelessWidget {
                     decoration: InputDecoration(
                         labelText: "Password", focusColor: Color(0xFF18D191)),
                   ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Color(0xFF18D191),
+                              borderRadius: BorderRadius.circular(10.0)),
+                          margin: EdgeInsets.only(right: 20.0, top: 20.0),
+                          padding: EdgeInsets.all(15.0),
+                          child: Center(
+                            child: Text(
+                              "Sing In ",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.transparent,
+                              borderRadius: BorderRadius.circular(10.0)),
+                          margin: EdgeInsets.only(right: 20.0, top: 20.0),
+                          padding: EdgeInsets.all(15.0),
+                          child: Center(
+                            child: Text(
+                              "Frogot Password ?",
+                              style: TextStyle(color: Color(0xFF18D191)),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
-              ))
+              )),
+              Spacer()
             ],
           ),
         ),

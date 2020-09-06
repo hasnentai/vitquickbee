@@ -3,7 +3,20 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vit_qucik_bee/landingpage.dart';
 import 'package:vit_qucik_bee/login_form.dart';
 
-class LoginReg extends StatelessWidget {
+class LoginReg extends StatefulWidget {
+  @override
+  _LoginRegState createState() => _LoginRegState();
+}
+
+class _LoginRegState extends State<LoginReg> {
+  bool userisAdmin;
+
+  @override
+  void initState() {
+    super.initState();
+    userisAdmin = true;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,25 +30,30 @@ class LoginReg extends StatelessWidget {
               height: 70.0,
             ),
             GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginForm()));
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LoginForm()));
               },
               child: Container(
-                  decoration: BoxDecoration(
-                      color: Color(0xFF18D191),
-                      borderRadius: BorderRadius.circular(10.0)),
-                  width: double.maxFinite,
-                  margin: EdgeInsets.all(20.0),
-                  padding: EdgeInsets.all(20.0),
-                  child: Center(
-                      child: Text(
+                decoration: BoxDecoration(
+                    color: Color(0xFF18D191),
+                    borderRadius: BorderRadius.circular(10.0)),
+                width: double.maxFinite,
+                margin: EdgeInsets.all(20.0),
+                padding: EdgeInsets.all(20.0),
+                child: Center(
+                  child: Text(
                     "Sing In with Email",
                     style: TextStyle(color: Colors.white),
-                  ),),),
+                  ),
+                ),
+              ),
             ),
             Row(
+              
               children: [
-                Expanded(
+                if(true)...[
+                    Expanded(
                   child: Container(
                     margin: EdgeInsets.only(left: 20, right: 10.0),
                     decoration: BoxDecoration(
@@ -85,6 +103,8 @@ class LoginReg extends StatelessWidget {
                     ),
                   ),
                 )
+                ]
+              
               ],
             ),
             Spacer(),
